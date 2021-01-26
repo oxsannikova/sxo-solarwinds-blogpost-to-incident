@@ -90,3 +90,8 @@ Copy your personal Webex API Token or your Bots' API Token into the VALUE field.
 
 > As the workflow progresses, you should see activities turning green. Don't be alarmed if some activities turn red, it is expected behavior.
 
+## Notes
+Please test this properly before implementing in a production environment. This is a sample workflow!
+
+## Author(s)
+Oxana Sannikova (Cisco)
