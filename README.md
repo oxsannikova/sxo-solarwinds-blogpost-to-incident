@@ -40,7 +40,7 @@ The URL will be a different depending on the region your account is in:
 
 Create Teams Room and add all necessary people. SXO will need to know the Room Name in order to send notifications.
 
-### Step 5. Obtain Webex Teams API Token
+### Step 4. Obtain Webex Teams API Token
 
 In order to send the Webex Teams messages, you have two options:
   - **Option 1 (For tests only):** Use your own Webex Teams API token that will need to be updated manually every 12 hours.
@@ -49,7 +49,7 @@ In order to send the Webex Teams messages, you have two options:
       - Record its API Token
       - Add Bot to the Webex Teams Room so that it can send notifications.
 
-### Step 6. Import Atomic Workflows
+### Step 5. Import Atomic Workflows
 
 SXO workflow is represented by the file in JSON format, that contains definitions and description of all the activities, targets, variables and atomic workflows that are in use. In this step, we will use file import to add these workflows to SecureX orchestration environment.
 
@@ -58,9 +58,10 @@ SXO workflow is represented by the file in JSON format, that contains definition
 1. Save the following workflows included in this reposiroty as json files on your computer: [Threat Response - Update Casebook](https://github.com/oxsannikova/sxo-solarwinds-blogpost-to-incident/blob/main/ThreatResponse-UpdateCasebook__definition_workflow_01KZ9WT3B47KT7c8MSYAvSw1lvTXdYqVSBV/definition_workflow_01KZ9WT3B47KT7c8MSYAvSw1lvTXdYqVSBV.json) and [Sys time to ISO format](https://github.com/oxsannikova/sxo-solarwinds-blogpost-to-incident/blob/main/sys-time-to-iso-format__definition_workflow_01JKYEUJWEVDG4IDBLpUhlliADd4SbrNwv2/definition_workflow_01JKYEUJWEVDG4IDBLpUhlliADd4SbrNwv2.json)
 2. In SecureX orchestration left hand-side menu, go to **Workflows** -> **Atomic Actions** -> **Import** -> **Browse** and import the atomic workflows.
 
-### Step 7. Import the main workflow
+### Step 6. Import the main workflow
 
-In SecureX orchestration left hand-side menu, go to Workflows -> My Workflows -> Import -> Browse and import the workflow called
+1. Save the following workflow included in this reposiroty as json files on your computer [talos-solarwinds-blogpost-to-incident](https://github.com/oxsannikova/sxo-solarwinds-blogpost-to-incident/blob/main/talos-solarwinds-blogpost-to-incident__definition_workflow_01KZ8MF3FCJ985zVbgULIwPFrSx9qslb5lx/definition_workflow_01KZ8MF3FCJ985zVbgULIwPFrSx9qslb5lx.json)
+2. In SecureX orchestration left hand-side menu, go to Workflows -> My Workflows -> Import -> Browse and import the workflow called [talos-solarwinds-blogpost-to-incident](https://github.com/oxsannikova/sxo-solarwinds-blogpost-to-incident/blob/main/talos-solarwinds-blogpost-to-incident__definition_workflow_01KZ8MF3FCJ985zVbgULIwPFrSx9qslb5lx/definition_workflow_01KZ8MF3FCJ985zVbgULIwPFrSx9qslb5lx.json)
 
 You will be presented with the following warning:
 
@@ -72,7 +73,7 @@ Don't get scared and click "Update" :)
 
 ![](/assets/token_request.png)
 
-Copy your personal Webex API Token or your Bots' API Token into the VALUE field. This is Secure String variable and it will be stored securely in the SXO.
+Copy your personal Webex Teams API Token or your Webex Teams Bots' API Token into the VALUE field. This is Secure String variable and it will be stored securely in the SXO.
 
 5. You should see the new workflow being added to the list. Click on the workflow when import is complete.
 
@@ -80,7 +81,13 @@ Copy your personal Webex API Token or your Bots' API Token into the VALUE field.
 
 ![](/assets/inside_workflow.png)
 
-## Step 8. Run the workflow
+### Step 7. Update local variables
+
+1. You will need to update local variable called **Webex Room Name**. To do so, oepn the workflow editor and click on the variable name in the workflow properies panel on right hand side.
+
+2. Modify the VALUE field to match the name of your Webex Teams Triag Room to receive notifications.
+
+### Step 8. Run the workflow
 
 1. To execute the workflow, click RUN at the right top corner in the action pane.
 
