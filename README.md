@@ -61,6 +61,7 @@ SXO workflow is represented by the file in JSON format, that contains definition
 ### Step 6. Import the main workflow
 
 1. Save the following workflow included in this reposiroty as json files on your computer [talos-solarwinds-blogpost-to-incident](https://github.com/oxsannikova/sxo-solarwinds-blogpost-to-incident/blob/main/talos-solarwinds-blogpost-to-incident__definition_workflow_01KZ8MF3FCJ985zVbgULIwPFrSx9qslb5lx/definition_workflow_01KZ8MF3FCJ985zVbgULIwPFrSx9qslb5lx.json)
+
 2. In SecureX orchestration left hand-side menu, go to Workflows -> My Workflows -> Import -> Browse and import the workflow called [talos-solarwinds-blogpost-to-incident](https://github.com/oxsannikova/sxo-solarwinds-blogpost-to-incident/blob/main/talos-solarwinds-blogpost-to-incident__definition_workflow_01KZ8MF3FCJ985zVbgULIwPFrSx9qslb5lx/definition_workflow_01KZ8MF3FCJ985zVbgULIwPFrSx9qslb5lx.json)
 
 You will be presented with the following warning:
@@ -98,7 +99,7 @@ Copy your personal Webex Teams API Token or your Webex Teams Bots' API Token int
 > As the workflow progresses, you should see activities turning green. Don't be alarmed if some activities turn red, it is expected behavior.
 
 ## Notes
-Please test this properly before implementing in a production environment. This is a sample workflow!
+Please test this workflow before implementing in a production environment. This is a sample workflow!
 
 ## Author(s)
 Oxana Sannikova (Cisco)
