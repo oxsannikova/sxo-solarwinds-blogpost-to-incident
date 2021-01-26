@@ -1,0 +1,104 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01JKYEUJWEVDG4IDBLpUhlliADd4SbrNwv2",
+    "name": "Sys Time in ISO Format",
+    "title": "Sys Time in ISO Format",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "0",
+          "scope": "input",
+          "name": "time_offset",
+          "type": "datatype.string",
+          "description": "time offset to remove from the system time",
+          "is_required": true,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JKYHNQACIQO5gcu1Z8mQcyzabXDHjHnzk",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "timeISO",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01JKYINHHJXNT6I8HavhMepbDxblEsFKTPr",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Time",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Sys Time in ISO Format",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01JKYFM8UJUF41cU3rM3LISwYD7XETUTQFm",
+        "name": "Execute Python Script",
+        "title": "Execute Python Script",
+        "type": "python3.script",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Execute Python Script",
+          "script": "from datetime import datetime\nimport time\n\nlinux_time = int(time.time())-$workflow.definition_workflow_01JKYEUJWEVDG4IDBLpUhlliADd4SbrNwv2.input.variable_workflow_01JKYHNQACIQO5gcu1Z8mQcyzabXDHjHnzk$\nprint (linux_time)\n\nt =  int(linux_time)\ntimeISO = (datetime.fromtimestamp(t).isoformat())+'+00:00'",
+          "script_queries": [
+            {
+              "script_query": "timeISO",
+              "script_query_name": "timeISO",
+              "script_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01JKYIRZ7Y9KM1erVTJxS2yrnjyM1eGIfp6",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01JKYEUJWEVDG4IDBLpUhlliADd4SbrNwv2.output.variable_workflow_01JKYINHHJXNT6I8HavhMepbDxblEsFKTPr$",
+              "variable_value_new": "$activity.definition_activity_01JKYFM8UJUF41cU3rM3LISwYD7XETUTQFm.output.script_queries.timeISO$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
