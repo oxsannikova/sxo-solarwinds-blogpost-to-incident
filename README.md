@@ -48,3 +48,45 @@ In order to send the Webex Teams messages, you have two options:
       - Create Webex Teams Bot following these instructions: [Create a Bot](https://developer.webex.com/docs/bots)
       - Record its API Token
       - Add Bot to the Webex Teams Room so that it can send notifications.
+
+### Step 6. Import Atomic Workflows
+
+SXO workflow is represented by the file in JSON format, that contains definitions and description of all the activities, targets, variables and atomic workflows that are in use. In this step, we will use file import to add these workflows to SecureX orchestration environment.
+
+> **Note:** Refer to documentation for more information about workflow import options: https://ciscosecurity.github.io/sxo-05-security-workflows/importing
+
+1. Save the following workflows included in this reposiroty as json files on your computer: [Threat Response - Update Casebook](https://github.com/oxsannikova/sxo-solarwinds-blogpost-to-incident/blob/main/ThreatResponse-UpdateCasebook__definition_workflow_01KZ9WT3B47KT7c8MSYAvSw1lvTXdYqVSBV/definition_workflow_01KZ9WT3B47KT7c8MSYAvSw1lvTXdYqVSBV.json) and [Sys time to ISO format](https://github.com/oxsannikova/sxo-solarwinds-blogpost-to-incident/blob/main/sys-time-to-iso-format__definition_workflow_01JKYEUJWEVDG4IDBLpUhlliADd4SbrNwv2/definition_workflow_01JKYEUJWEVDG4IDBLpUhlliADd4SbrNwv2.json)
+2. In SecureX orchestration left hand-side menu, go to **Workflows** -> **Atomic Actions** -> **Import** -> **Browse** and import the atomic workflows.
+
+### Step 7. Import the main workflow
+
+In SecureX orchestration left hand-side menu, go to Workflows -> My Workflows -> Import -> Browse and import the workflow called
+
+You will be presented with the following warning:
+
+![](/assets/import_warning.png)
+
+Don't get scared and click "Update" :)
+
+4. This is where you will provide your Webex Token:
+
+![](/assets/token_request.png)
+
+Copy your personal Webex API Token or your Bots' API Token into the VALUE field. This is Secure String variable and it will be stored securely in the SXO.
+
+5. You should see the new workflow being added to the list. Click on the workflow when import is complete.
+
+6. If import was successful, you should see zero warnings at the top of the workflow canvas.
+
+![](/assets/inside_workflow.png)
+
+## Step 8. Run the workflow
+
+1. To execute the workflow, click RUN at the right top corner in the action pane.
+
+![](/assets/action_pane.png)
+
+2.  Observe workflow execution.
+
+> As the workflow progresses, you should see activities turning green. Don't be alarmed if some activities turn red, it is expected behavior.
+
