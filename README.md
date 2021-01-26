@@ -86,7 +86,9 @@ Copy your personal Webex Teams API Token or your Webex Teams Bots' API Token int
 
 1. You will need to update local variable called **Webex Room Name**. To do so, oepn the workflow editor and click on the variable name in the workflow properies panel on right hand side.
 
-2. Modify the VALUE field to match the name of your Webex Teams Triag Room to receive notifications.
+2. Modify the VALUE field to match the name of your Webex Teams Triage Room to receive notifications.
+
+![](/assets/update_room_name.png)
 
 ### Step 8. Run the workflow
 
