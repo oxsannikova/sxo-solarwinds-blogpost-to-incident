@@ -9,28 +9,42 @@
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "https://blog.talosintelligence.com/2020/12/solarwinds-supplychain-coverage.html",
+          "value": "SecureX Orchestration Tests",
           "scope": "input",
-          "name": "Blog Post URL",
+          "name": "Webex Room Name",
           "type": "datatype.string",
-          "description": "The URL of the blog post to investigate",
-          "is_required": true,
+          "description": "Name of the Webex Teams room to post messages in. If you leave this blank, no Webex Teams messages will be posted. Note that you should invite your bot to the room before trying to send a message to it",
+          "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01KZ8MF323ASE7CyOFK4ShZFHWTj6ejmtlt",
+        "unique_name": "variable_workflow_01KZ8MF323FL33p43lHzHCETrWVwT2JndOl",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.secure_string",
         "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "CTR Access Token",
+          "value": "*****",
+          "scope": "input",
+          "name": "Webex Bot Token",
           "type": "datatype.secure_string",
+          "description": "The access token to use to authenticate to the Webex Teams API",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01KZ8MF323GO43CZUePDkGnVP2ja4xS4j0t",
+        "unique_name": "variable_workflow_01KZ8MF3236I14GI1HotQTBl7PFGxzhb5Tz",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Incident Targets",
+          "type": "datatype.string",
+          "is_required": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_01KZ8MF323IWZ6GV9NJ21nNzzZoKrOKPWtI",
         "object_type": "variable_workflow"
       },
       {
@@ -51,12 +65,12 @@
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Incident Targets",
+          "name": "Webex Text",
           "type": "datatype.string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01KZ8MF323IWZ6GV9NJ21nNzzZoKrOKPWtI",
+        "unique_name": "variable_workflow_01KZ8MF323EAL0X0Wukqy86ojtUmFhX8h8J",
         "object_type": "variable_workflow"
       },
       {
@@ -73,20 +87,6 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.secure_string",
-        "properties": {
-          "value": "*****",
-          "scope": "input",
-          "name": "Webex Bot Token",
-          "type": "datatype.secure_string",
-          "description": "The access token to use to authenticate to the Webex Teams API",
-          "is_required": false,
-          "is_invisible": false
-        },
-        "unique_name": "variable_workflow_01KZ8MF3236I14GI1HotQTBl7PFGxzhb5Tz",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "[]",
@@ -100,30 +100,30 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.string",
+        "schema_id": "datatype.secure_string",
         "properties": {
           "value": "",
           "scope": "local",
-          "name": "Webex Text",
-          "type": "datatype.string",
+          "name": "CTR Access Token",
+          "type": "datatype.secure_string",
           "is_required": false,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01KZ8MF323EAL0X0Wukqy86ojtUmFhX8h8J",
+        "unique_name": "variable_workflow_01KZ8MF323GO43CZUePDkGnVP2ja4xS4j0t",
         "object_type": "variable_workflow"
       },
       {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "SecureX Orchestration Tests",
+          "value": "https://blog.talosintelligence.com/2020/12/solarwinds-supplychain-coverage.html",
           "scope": "input",
-          "name": "Webex Room Name",
+          "name": "Blog Post URL",
           "type": "datatype.string",
-          "description": "Name of the Webex Teams room to post messages in. If you leave this blank, no Webex Teams messages will be posted. Note that you should invite your bot to the room before trying to send a message to it",
-          "is_required": false,
+          "description": "The URL of the blog post to investigate",
+          "is_required": true,
           "is_invisible": false
         },
-        "unique_name": "variable_workflow_01KZ8MF323FL33p43lHzHCETrWVwT2JndOl",
+        "unique_name": "variable_workflow_01KZ8MF323ASE7CyOFK4ShZFHWTj6ejmtlt",
         "object_type": "variable_workflow"
       }
     ],
@@ -2881,7 +2881,7 @@
     "variable_01KZ8QCJGTKNH0LCmUju4wHXAXbkN0MRYZb": {
       "unique_name": "variable_01KZ8QCJGTKNH0LCmUju4wHXAXbkN0MRYZb",
       "properties": {
-        "value": "casebook-59b25d2e-8b9a-4e73-9ae0-43434b69b327",
+        "value": "null",
         "scope": "global",
         "name": "SolarWinds Casebook ID",
         "type": "datatype.string",
@@ -2892,17 +2892,17 @@
     }
   },
   "atomic_workflows": [
-    "definition_workflow_01JKYEUJWEVDG4IDBLpUhlliADd4SbrNwv2",
-    "definition_workflow_01D6KGWC1QCSN7f2tnHrhIHVeZHLKBZubRz",
+    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
+    "definition_workflow_01KZ9WT3B47KT7c8MSYAvSw1lvTXdYqVSBV",
     "definition_workflow_01BMYF7PCRLRM3pfYcuM9yYFsKoYBEBO4PK",
+    "definition_workflow_01D6KGWC1QCSN7f2tnHrhIHVeZHLKBZubRz",
+    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
+    "definition_workflow_01J3STRKBDJ7H4DZmPyS7xOkHlrhXKxkH34",
+    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
     "definition_workflow_01KVVWMB2UTRF5uVHVH9DtiT6vgIfnzTdRS",
     "definition_workflow_01KWJ2ISZTF2V6ibRYe7FZ7sOuycDOpnwss",
+    "definition_workflow_01JKYEUJWEVDG4IDBLpUhlliADd4SbrNwv2",
     "definition_workflow_01C9F1VJ1I5KH26f860hJC5zDSD33548bYS",
-    "definition_workflow_01KVOGF574Y291CRwQLNB1TtzEHDNwyUx7O",
-    "definition_workflow_01FHMU6SD5XPL6eRW4zFXqkA1w8jWiQCIBU",
-    "definition_workflow_01KWID47SRHY30TYWU3BQSFODWA7PVO360x",
-    "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf",
-    "definition_workflow_01J3STRKBDJ7H4DZmPyS7xOkHlrhXKxkH34",
-    "definition_workflow_01KZ9WT3B47KT7c8MSYAvSw1lvTXdYqVSBV"
+    "definition_workflow_01FGYY44YU521254ygN3Le0In0kEHpiPNpf"
   ]
 }
